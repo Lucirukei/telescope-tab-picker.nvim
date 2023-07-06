@@ -29,6 +29,12 @@ telescope.setup({
 		extensions = {
         -- The default config values.
 		["telescope-tab-picker"] = {		   
+						-- How the file names will show in the picker
+			filename_modifier = ":t",
+						-- How the filenames will be separated in the picker
+			filename_separator = ", ",
+						-- How the file name will show up in the picker title
+			title_fn_modifier = ":.",
             -- Create an Ex command, separate from Telescope
 			create_command = true,				
             -- The name of the Ex command to create
@@ -66,6 +72,12 @@ Using Lazy:
 		local telescope_tab_picker = require("telescope-tab-picker")
         -- The default config values.
 		require("telescope-tab-picker").setup({   
+						-- How the file names will show in the picker
+			filename_modifier = ":t",
+						-- How the filenames will be separated in the picker
+			filename_separator = ", ",
+						-- How the file name will show up in the picker title
+			title_fn_modifier = ":.",
             -- Create an Ex command, separate from Telescope
 			create_command = true,                
             -- The name of the Ex command to create

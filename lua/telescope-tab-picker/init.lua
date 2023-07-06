@@ -22,6 +22,9 @@ function L.step_down(prompt_bufnr)
 end
 
 local default_config = {
+	filename_modifier = ":t",
+	filename_separator = ", ",
+	title_fn_modifier = ":.",
 	create_command = true,
 	command_name = "TabPicker",
 	display_amount = true,
@@ -60,14 +63,14 @@ end
 local function entry_maker(entry)
 	local relative_buf_paths = {}
 	for _, buffer_path in pairs(entry.buffer_paths) do
-		local relative_buf_path = vim.fn.fnamemodify(buffer_path, ":.")
+		local relative_buf_path = vim.fn.fnamemodify(buffer_path, default_config.filename_modifier)
 		table.insert(relative_buf_paths, relative_buf_path)
 	end
 	local display_text = entry.id .. ". "
 	if default_config.display_amount then
 		display_text = display_text .. " [" .. entry.window_amount .. "] "
 	end
-	display_text = display_text .. table.concat(relative_buf_paths, " | ")
+	display_text = display_text .. table.concat(relative_buf_paths, default_config.filename_separator)
 	return {
 		value = entry,
 		display = display_text,
@@ -87,7 +90,7 @@ local function attach_mappings(_, map)
 end
 
 local function dyn_title(self, entry)
-	local relative_buf_path = vim.fn.fnamemodify(entry.value.path, ":.")
+	local relative_buf_path = vim.fn.fnamemodify(entry.value.path, default_config.title_fn_modifier)
 	return "Previewing " .. relative_buf_path
 end
 
