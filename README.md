@@ -71,7 +71,7 @@ Using Lazy:
 		local sorters = require("telescope.sorters")
 		local telescope_tab_picker = require("telescope-tab-picker")
 		-- The default config values.
-		require("telescope-tab-picker").setup({   
+		telescope_tab_picker.setup({   
 			-- How the file names will show in the picker
 			filename_modifier = ":t",
 			-- How the filenames will be separated in the picker
