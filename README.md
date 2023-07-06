@@ -58,6 +58,7 @@ Using Lazy:
 
 ```lua
 
+{
 	"lucirukei/telescope-tab-picker",
 	dependencies = { "nvim-telescope/telescope.nvim" },
 	config = function() 
@@ -81,7 +82,7 @@ Using Lazy:
 			}
 		})
 	end
-		})
+}
 
 ```
 
