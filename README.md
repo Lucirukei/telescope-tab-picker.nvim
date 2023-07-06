@@ -27,23 +27,23 @@ local telescope_tab_picker = require("telescope-tab-picker")
 telescope.setup({
 		-- Telescope config,
 		extensions = {
-        -- The default config values.
+		-- The default config values.
 		["telescope-tab-picker"] = {		   
-						-- How the file names will show in the picker
+			-- How the file names will show in the picker
 			filename_modifier = ":t",
-						-- How the filenames will be separated in the picker
+			-- How the filenames will be separated in the picker
 			filename_separator = ", ",
-						-- How the file name will show up in the picker title
+			-- How the file name will show up in the picker title
 			title_fn_modifier = ":.",
-            -- Create an Ex command, separate from Telescope
+			-- Create an Ex command, separate from Telescope
 			create_command = true,				
-            -- The name of the Ex command to create
+			-- The name of the Ex command to create
 			command_name = "TabPicker",         
-            -- Show how many buffers are open in the tabs
+			-- Show how many buffers are open in the tabs
 			display_amount = true,              
-            -- The Telescope sorter to use
+			-- The Telescope sorter to use
 			sorter = sorters.get_fuzzy_file,    
-            -- Mappings for navigating the picker
+			-- Mappings for navigating the picker
 			mappings = {                        
 				["<cr>"] = telescope_tab_picker.select_entry,
 				["<c-k>"] = telescope_tab_picker.step_up,
@@ -51,7 +51,7 @@ telescope.setup({
 			}
 		}
 	}
-	})
+})
 
 ```
 
@@ -70,23 +70,23 @@ Using Lazy:
 	config = function() 
 		local sorters = require("telescope.sorters")
 		local telescope_tab_picker = require("telescope-tab-picker")
-        -- The default config values.
+		-- The default config values.
 		require("telescope-tab-picker").setup({   
-						-- How the file names will show in the picker
+			-- How the file names will show in the picker
 			filename_modifier = ":t",
-						-- How the filenames will be separated in the picker
+			-- How the filenames will be separated in the picker
 			filename_separator = ", ",
-						-- How the file name will show up in the picker title
+			-- How the file name will show up in the picker title
 			title_fn_modifier = ":.",
-            -- Create an Ex command, separate from Telescope
+			-- Create an Ex command, separate from Telescope
 			create_command = true,                
-            -- The name of the Ex command to create
+			-- The name of the Ex command to create
 			command_name = "TabPicker",           
-            -- Show how many buffers are open in the tabs
+			-- Show how many buffers are open in the tabs
 			display_amount = true,                
-            -- The Telescope sorter to use
+			-- The Telescope sorter to use
 			sorter = sorters.get_fuzzy_file,      
-            -- Mappings for navigating the picker
+			-- Mappings for navigating the picker
 			mappings = {                          
 				["<cr>"] = telescope_tab_picker.select_entry,
 				["<c-k>"] = telescope_tab_picker.step_up,
